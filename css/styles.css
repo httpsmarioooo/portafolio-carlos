@@ -16,6 +16,14 @@ body {
   padding: 1rem;
 }
 
+
+
+.btn-mute{
+    cursor: pointer;
+    padding-top: 50px;
+}
+
+
 /* Video de fondo */
 .back-video {
   position: fixed;
@@ -34,7 +42,7 @@ body {
   flex-wrap: wrap; /* Permite que las imágenes salten a otra línea si no caben */
   justify-content: center;
   gap: 10px;
-  margin-top: 250px;
+  margin-top: 180px;
   perspective: 1000px; /* Para dar sensación de profundidad */
 }
 
@@ -126,8 +134,8 @@ body {
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    height: 500px;
-    width: 500px;
+    height: 800px;
+    width: 800px;
     animation: fadeInUp 0.5s ease;
   }
   

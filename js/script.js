@@ -17,4 +17,28 @@ function showCard(title, text) {
     card.classList.remove("active");
     closeAudio.play();
   }
-  
+
+let soundEnabled = true;
+
+function toggleSound() {
+  soundEnabled = !soundEnabled;
+
+  const openAudio = document.getElementById("audioOpen");
+  const closeAudio = document.getElementById("audioClose");
+  const toggleBtn = document.getElementById("toggleSoundBtn");
+  const icon = toggleBtn.querySelector("box-icon");
+
+  openAudio.muted = !soundEnabled;
+  closeAudio.muted = !soundEnabled;
+
+  // Cambia el ícono
+  if (soundEnabled) {
+    icon.setAttribute("name", "volume");
+    icon.removeAttribute("type");
+  } else {
+    icon.setAttribute("name", "volume-mute");
+    icon.setAttribute("type");
+  }
+}
+
+

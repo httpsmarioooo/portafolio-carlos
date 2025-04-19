@@ -14,18 +14,21 @@
 </head>
 
 <body>
+    <div class="btn-mute">
+        <a id="toggleSoundBtn" onclick="toggleSound()">
+            <box-icon name='volume' color='#ffffff'></box-icon>
+          </a>
+    </div>
 
     <div class="container-video">
         <video class="back-video" loop autoplay muted playsinline src="/video/galaxy.mp4"></video>
     </div>
 
     <div class="container-images">
-        <div class="image-box" onclick="showCard('Planeta Rojo', 'Este planeta es misterioso y cálido.')">
+        <div class="image-box" onclick="showCard('Sobre mí', 'Hola, Soy carlos mario, nací en cali Colombia y me apasiona la programacion y el diseño')">
             <a href="#"><img src="/images/img1.png"></a>
             <span class="caption">Sobre mí</span>
         </div>
-
-
 
         <div class="image-box" onclick="showCard('AOASDLASLD Rojo', 'Este planeta es misterioso y cálido.')">
             <a href="#"><img src="/images/img2.png"></a>
@@ -60,6 +63,7 @@
     </footer>
 
     <script src="/js/script.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 </body>
 
