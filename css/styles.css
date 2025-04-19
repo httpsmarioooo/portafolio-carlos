@@ -41,7 +41,7 @@ body {
   display: flex;
   flex-wrap: wrap; /* Permite que las imágenes salten a otra línea si no caben */
   justify-content: center;
-  gap: 10px;
+  gap: 0px;
   margin-top: 180px;
   perspective: 1000px; /* Para dar sensación de profundidad */
 }
@@ -55,12 +55,52 @@ body {
 
 .image-box {
   position: relative;
+  margin-left: -100px; /* Superpone las imágenes ajustando el margen izquierdo */
   display: inline-block;
 }
 
 .image-box img {
   width: 300px; /*Tamaño de la img */
   transition: transform 0.3s ease;
+}
+
+
+/* Estilos para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container-images {
+      flex-wrap: wrap; /* Permite que las imágenes salten a otra línea */
+      justify-content: center; /* Centra las imágenes */
+      margin-top: 150px; /* Ajusta el margen superior */
+      gap: 10px; /* Agrega un pequeño espacio entre las imágenes */
+  }
+
+  .image-box {
+      margin-left: -50px; /* Superposición horizontal más ligera */
+      margin-bottom: 15px; /* Espacio entre filas */
+  }
+
+  .image-box img {
+      width: 370px; /* Ajusta el tamaño de las imágenes para tablets */
+  }
+}
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .container-images {
+      flex-wrap: wrap; /* Permite que las imágenes salten a otra línea */
+      justify-content: center; /* Centra las imágenes */
+      margin-top: 100px; /* Ajusta el margen superior */
+  }
+
+  .image-box {
+      margin-left: 0; /* Elimina la superposición horizontal */
+      margin-bottom: 20px; /* Agrega espacio entre las imágenes */
+  }
+
+  .image-box img {
+      width: 150px; /* Reduce el tamaño de las imágenes */
+  }
 }
 
 .caption {
@@ -143,9 +183,55 @@ body {
     border-radius: 15px;
     text-align: center;
     height: auto;
-    width: 400px;
+    width: 360px;
     animation: fadeInUp 0.5s ease;
   }
+
+
+  .card-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.card-list-item {
+    display: flex;
+    flex-direction: column; /* Cambia a columna para que el enlace esté arriba y las etiquetas abajo */
+    align-items: flex-start; /* Alinea el contenido a la izquierda */
+    margin-bottom: 15px;
+}
+
+.card-link {
+    color: #ff0066;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    margin-bottom: 5px; /* Espacio entre el enlace y las etiquetas */
+}
+
+.card-link:hover {
+    color: #e296b4;
+    text-decoration: underline;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las etiquetas salten de línea si son muchas */
+    gap: 5px;
+}
+
+.card-tag {
+    background-color: #ff0066;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+};
+}
+
+
+
 
   p#cardText {
     padding-top: 20px;

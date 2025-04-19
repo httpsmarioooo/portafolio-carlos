@@ -1,23 +1,55 @@
-function showCard(title, text, textTwo) {
+function showCard(title, text, textTwo, listItems = []) {
     const card = document.getElementById("infoCard");
     const titleElement = document.getElementById("cardTitle");
     const textElement = document.getElementById("cardText");
-    const textElementTwo = document.getElementById("cardTextTwo")
-    const openAudio = document.getElementById("audioOpen");
+    const textElementTwo = document.getElementById("cardTextTwo");
 
-    //Titulo
+    // Título
     titleElement.innerHTML = `<span class="gradiant-title">${title}</span>`;
 
-    //Texto
+    // Texto
     textElement.textContent = text;
-    // textElement.innerHTML = `Este es un <span class="gradiente">texto</span> informativo`;
     textElementTwo.textContent = textTwo;
 
+    // Limpiar contenido previo
+    const listContainer = document.createElement('ul');
+    listContainer.classList.add('card-list'); // Clase opcional para estilos
 
+    // Agregar enlaces y etiquetas a la lista
+    listItems.forEach(item => {
+        const li = document.createElement('li');
+        li.classList.add('card-list-item');
 
+        // Enlace
+        const link = document.createElement('a');
+        link.href = item.url;
+        link.textContent = item.text;
+        link.target = '_blank'; // Abrir en una nueva pestaña
+        link.classList.add('card-link'); // Clase opcional para estilos
+
+        // Etiquetas de lenguajes
+        const tags = document.createElement('div');
+        tags.classList.add('card-tags');
+        item.languages.forEach(language => {
+            const tag = document.createElement('span');
+            tag.classList.add('card-tag');
+            tag.textContent = language;
+            tags.appendChild(tag);
+        });
+
+        li.appendChild(link); // Agregar el enlace primero
+        li.appendChild(tags); // Agregar las etiquetas debajo
+        listContainer.appendChild(li);
+    });
+
+    // Agregar la lista al modal
+    textElementTwo.appendChild(listContainer);
+
+    // Mostrar la tarjeta
     card.classList.add("active");
+    const openAudio = document.getElementById("audioOpen");
     openAudio.play();
-  }
+}
   
   function closeCard() {
     const card = document.getElementById("infoCard");

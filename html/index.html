@@ -16,7 +16,7 @@
     <div class="btn-mute">
         <a id="toggleSoundBtn" onclick="toggleSound()">
             <box-icon name='volume' color='#ffffff'></box-icon>
-          </a>
+        </a>
     </div>
 
     <div class="container-video">
@@ -24,42 +24,57 @@
     </div>
 
     <div class="container-images">
-        <div class="image-box" onclick="showCard('Sobre mí', 'Hola, soy Carlos Mario. Nací en Cali, Colombia, y me apasiona la programación y el diseño.', 'Ayudo a crear experiencias digitales atractivas y funcionales como programador junior en frontend y backend. Soy ingeniero en multimedia y me apasiona el desarrollo web, combinando creatividad y lógica para construir interfaces intuitivas y sistemas eficientes.')">
+        <div class="image-box"
+            onclick="showCard('Sobre mí', 'Hola, soy Carlos Mario. Nací en Cali, Colombia, y me apasiona la programación y el diseño.', 'Ayudo a crear experiencias digitales atractivas y funcionales como programador junior en frontend y backend. Soy ingeniero en multimedia y me apasiona el desarrollo web, combinando creatividad y lógica para construir interfaces intuitivas y sistemas eficientes.')">
             <a href="#"><img src="/images/img1.png"></a>
             <span class="caption">Sobre mí</span>
         </div>
 
-        <div class="image-box" onclick="showCard('Proyectos Code', 'Pueden ver algunos proyecyos realizados por mi, con diferentes herramientas')">
+        <div class="image-box" onclick="showCard('Proyectos Code', 'Pueden ver algunos proyectos realizados por mí, con diferentes herramientas.', '', [
+        { text: 'Proyecto 1: Página web', url: 'https://example.com/proyecto1', languages: ['HTML', 'CSS', 'JavaScript'] },
+        { text: 'Proyecto 2: Aplicación móvil', url: 'https://example.com/proyecto2', languages: ['Flutter', 'Dart'] },
+        { text: 'Proyecto 3: API REST', url: 'https://example.com/proyecto3', languages: ['Node.js', 'Express', 'MongoDB'] }
+    ])">
             <a href="#"><img src="/images/img2.png"></a>
             <span class="caption">Proyectos Code</span>
         </div>
-        <div class="image-box" onclick="showCard('Proyectos Artísticos', 'Este planeta es misterioso y cálido.')">
+
+        <div class="image-box" onclick="showCard('Proyectos Artísticos', 'Pueden ver algunos proyectos realizados por mí, con diferentes herramientas.', '', [
+        { text: 'Proyecto 1: Página weasssssb', url: 'https://example.com/proyecto1', languages: ['HTML', 'CSS', 'JavaScript'] },
+        { text: 'Proyecto 2: Aplicación móvil', url: 'https://example.com/proyecto2', languages: ['Flutter', 'Dart'] },
+        { text: 'Proyecto 3: API REST', url: 'https://example.com/proyecto3', languages: ['Node.js', 'Express', 'MongoDB'] }
+    ])">
             <a href="#"><img src="/images/img3.png"></a>
             <span class="caption">Proyectos Artísticos</span>
         </div>
-        <div class="image-box" onclick="showCard('Contacto', 'Este planeta es misterioso y cálido.')">
-            <a href="#"><img src="/images/img4.png"></a>
-            <span class="caption">Contacto</span>
-        </div>
+
+        <div class="image-box" onclick="showCard('Contacto', '¡Contáctame!', '', [
+    { text: 'Teléfono: +57 123 456 7890', url: 'tel:+571234567890', icon: 'fas fa-phone' },
+    { text: 'LinkedIn', url: 'https://www.linkedin.com/in/carlosmario', icon: 'fab fa-linkedin' },
+    { text: 'GitHub', url: 'https://github.com/carlosmario', icon: 'fab fa-github' }
+])">
+    <a href="#"><img src="/images/img4.png"></a>
+    <span class="caption">Contacto</span>
+</div>
+        
     </div>
 
     <!-- Card Modal Oculta -->
     <div class="info-card" id="infoCard">
         <div class="card-content">
-          <h2 id="cardTitle"></h2>
-      
-          <!-- Aquí irán las imágenes -->
-          <div id="cardGallery" class="card-gallery"></div>
-      
-          <p id="cardText"></p>
-          <p id="cardTextTwo"></p>
-      
-          <!-- Botón para ir al proyecto -->
-          <a id="cardLink" href="#" target="_blank" class="btn-link" style="display: none;">Ver Proyecto</a>
-      
-          <button onclick="closeCard()">Cerrar</button>
+            <h2 id="cardTitle"></h2>
+
+            <!-- Aquí se muestra el texto -->
+            <p id="cardText"></p>
+            <br>
+            <p id="cardTextTwo"></p>
+
+            <!-- Botón para ir al proyecto -->
+            <a id="cardLink" href="#" target="_blank" class="btn-link" style="display: none;">Ver Proyecto</a>
+
+            <button onclick="closeCard()">Cerrar</button>
         </div>
-      </div>
+    </div>
 
     <!-- Audios -->
     <audio id="audioOpen" src="/sounds/Open-sound.mp3"></audio>
@@ -68,7 +83,7 @@
     <footer class="footer-main">
         <img src="/images/firma.png" style="height: 200px;">
         <p class="gradiant-foot">Carlos Mario Torres Pérez</p>
-        
+
     </footer>
 
     <script src="/js/script.js"></script>
