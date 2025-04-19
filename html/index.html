@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="/images/firma.png" type="image/x-icon">
-
 </head>
 
 <body>
@@ -25,20 +24,20 @@
     </div>
 
     <div class="container-images">
-        <div class="image-box" onclick="showCard('Sobre mí', 'Hola, Soy carlos mario, nací en cali Colombia y me apasiona la programacion y el diseño')">
+        <div class="image-box" onclick="showCard('Sobre mí', 'Hola, soy Carlos Mario. Nací en Cali, Colombia, y me apasiona la programación y el diseño.', 'Ayudo a crear experiencias digitales atractivas y funcionales como programador junior en frontend y backend. Soy ingeniero en multimedia y me apasiona el desarrollo web, combinando creatividad y lógica para construir interfaces intuitivas y sistemas eficientes.')">
             <a href="#"><img src="/images/img1.png"></a>
             <span class="caption">Sobre mí</span>
         </div>
 
-        <div class="image-box" onclick="showCard('AOASDLASLD Rojo', 'Este planeta es misterioso y cálido.')">
+        <div class="image-box" onclick="showCard('Proyectos Code', 'Pueden ver algunos proyecyos realizados por mi, con diferentes herramientas')">
             <a href="#"><img src="/images/img2.png"></a>
             <span class="caption">Proyectos Code</span>
         </div>
-        <div class="image-box" onclick="showCard('AOASDLASLD Rojo', 'Este planeta es misterioso y cálido.')">
+        <div class="image-box" onclick="showCard('Proyectos Artísticos', 'Este planeta es misterioso y cálido.')">
             <a href="#"><img src="/images/img3.png"></a>
             <span class="caption">Proyectos Artísticos</span>
         </div>
-        <div class="image-box" onclick="showCard('AOASDLASLD Rojo', 'Este planeta es misterioso y cálido.')">
+        <div class="image-box" onclick="showCard('Contacto', 'Este planeta es misterioso y cálido.')">
             <a href="#"><img src="/images/img4.png"></a>
             <span class="caption">Contacto</span>
         </div>
@@ -47,11 +46,20 @@
     <!-- Card Modal Oculta -->
     <div class="info-card" id="infoCard">
         <div class="card-content">
-            <h2 id="cardTitle">Título</h2>
-            <p id="cardText">Texto informativo</p>
-            <button onclick="closeCard()">Cerrar</button>
+          <h2 id="cardTitle"></h2>
+      
+          <!-- Aquí irán las imágenes -->
+          <div id="cardGallery" class="card-gallery"></div>
+      
+          <p id="cardText"></p>
+          <p id="cardTextTwo"></p>
+      
+          <!-- Botón para ir al proyecto -->
+          <a id="cardLink" href="#" target="_blank" class="btn-link" style="display: none;">Ver Proyecto</a>
+      
+          <button onclick="closeCard()">Cerrar</button>
         </div>
-    </div>
+      </div>
 
     <!-- Audios -->
     <audio id="audioOpen" src="/sounds/Open-sound.mp3"></audio>
@@ -59,7 +67,8 @@
 
     <footer class="footer-main">
         <img src="/images/firma.png" style="height: 200px;">
-        <p>Carlos Mario Torres Pérez</p>
+        <p class="gradiant-foot">Carlos Mario Torres Pérez</p>
+        
     </footer>
 
     <script src="/js/script.js"></script>

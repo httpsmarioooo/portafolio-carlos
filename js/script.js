@@ -1,11 +1,20 @@
-function showCard(title, text) {
+function showCard(title, text, textTwo) {
     const card = document.getElementById("infoCard");
     const titleElement = document.getElementById("cardTitle");
     const textElement = document.getElementById("cardText");
+    const textElementTwo = document.getElementById("cardTextTwo")
     const openAudio = document.getElementById("audioOpen");
-  
-    titleElement.textContent = title;
+
+    //Titulo
+    titleElement.innerHTML = `<span class="gradiant-title">${title}</span>`;
+
+    //Texto
     textElement.textContent = text;
+    // textElement.innerHTML = `Este es un <span class="gradiente">texto</span> informativo`;
+    textElementTwo.textContent = textTwo;
+
+
+
     card.classList.add("active");
     openAudio.play();
   }
