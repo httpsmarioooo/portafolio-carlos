@@ -16,28 +16,50 @@
 <body>
 
     <div class="container-video">
-        <video class="back-video" loop autoplay muted playsinline src="/images/galaxy.mp4"></video>
+        <video class="back-video" loop autoplay muted playsinline src="/video/galaxy.mp4"></video>
     </div>
 
     <div class="container-images">
-        <div>
-           <a href="#"><img src="/images/img1.png"></a>
+        <div class="image-box" onclick="showCard('Planeta Rojo', 'Este planeta es misterioso y cálido.')">
+            <a href="#"><img src="/images/img1.png"></a>
+            <span class="caption">Sobre mí</span>
         </div>
-        <div>
-            <img src="/images/img2.png" >
+
+
+
+        <div class="image-box" onclick="showCard('AOASDLASLD Rojo', 'Este planeta es misterioso y cálido.')">
+            <a href="#"><img src="/images/img2.png"></a>
+            <span class="caption">Proyectos Code</span>
         </div>
-        <div>
-            <img src="/images/img3.png" >
+        <div class="image-box" onclick="showCard('AOASDLASLD Rojo', 'Este planeta es misterioso y cálido.')">
+            <a href="#"><img src="/images/img3.png"></a>
+            <span class="caption">Proyectos Artísticos</span>
         </div>
-        <div>
-            <img src="/images/img4.png">
+        <div class="image-box" onclick="showCard('AOASDLASLD Rojo', 'Este planeta es misterioso y cálido.')">
+            <a href="#"><img src="/images/img4.png"></a>
+            <span class="caption">Contacto</span>
         </div>
     </div>
+
+    <!-- Card Modal Oculta -->
+    <div class="info-card" id="infoCard">
+        <div class="card-content">
+            <h2 id="cardTitle">Título</h2>
+            <p id="cardText">Texto informativo</p>
+            <button onclick="closeCard()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Audios -->
+    <audio id="audioOpen" src="/sounds/Open-sound.mp3"></audio>
+    <audio id="audioClose" src="/sounds/Close-sound.mp3"></audio>
 
     <footer class="footer-main">
         <img src="/images/firma.png" style="height: 200px;">
         <p>Carlos Mario Torres Pérez</p>
     </footer>
+
+    <script src="/js/script.js"></script>
 
 </body>
 

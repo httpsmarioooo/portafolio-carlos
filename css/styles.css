@@ -1,64 +1,163 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Onest", sans-serif;
+  color: rgb(255, 255, 255);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Video de fondo */
+.back-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  mix-blend-mode: overlay;
+}
+
+/* Contenedor de imágenes */
+.container-images {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las imágenes salten a otra línea si no caben */
+  justify-content: center;
+  gap: 10px;
+  margin-top: 250px;
+  perspective: 1000px; /* Para dar sensación de profundidad */
+}
+
+/* Imágenes dentro del contenedor */
+.container-images img {
+  max-width: 100%;
+  height: auto;
+  animation: flotandoEspacial 6s ease-in-out infinite alternate;
+}
+
+.image-box {
+  position: relative;
+  display: inline-block;
+}
+
+.image-box img {
+  width: 300px; /*Tamaño de la img */
+  transition: transform 0.3s ease;
+}
+
+.caption {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 9px;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+
+.image-box:hover .caption {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+@keyframes flotandoEspacial {
+  0% {
+    transform: translate(0px, 0px) rotate(-3deg);
   }
-  
-  body {
-    font-family: "Onest", sans-serif;
-    color: rgb(255, 255, 255);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
+  25% {
+    transform: translate(5px, -10px) rotate(1deg);
   }
-  
-  /* Video de fondo */
-  .back-video {
+  50% {
+    transform: translate(-5px, 5px) rotate(-4deg);
+  }
+  75% {
+    transform: translate(10px, -5px) rotate(2deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(3deg);
+  }
+}
+
+
+
+.info-card {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-    mix-blend-mode: overlay;
-  }
-  
-  /* Contenedor de imágenes */
-  .container-images {
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 5, 0.8);
     display: flex;
-    flex-wrap: wrap; /* Permite que las imágenes salten a otra línea si no caben */
     justify-content: center;
-    gap: 10px;
-    margin-top: 250px;
-    perspective: 1000px; /* Para dar sensación de profundidad */
+    align-items: center;
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
   }
   
-  /* Imágenes dentro del contenedor */
-  .container-images img {
-    max-width: 100%;
-    height: auto;
-    width: 250px;
-    animation: flotandoEspacial 6s ease-in-out infinite alternate;
+  .info-card.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .card-content {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #ffffff22;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    height: 500px;
+    width: 500px;
+    animation: fadeInUp 0.5s ease;
+  }
+  
+  .card-content button {
+    margin-top: 1rem;
+    background: #ff0066;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
   }
 
- 
-@keyframes flotandoEspacial {
-    0%   { transform: translate(0px, 0px) rotate(-3deg); }
-    25%  { transform: translate(5px, -10px) rotate(1deg); }
-    50%  { transform: translate(-5px, 5px) rotate(-4deg); }
-    75%  { transform: translate(10px, -5px) rotate(2deg); }
-    100% { transform: translate(0px, 0px) rotate(3deg); }
-  }
-  /* Footer */
-  .footer-main {
-    margin-top: auto;
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  
+
+
+/* Footer */
+.footer-main {
+  margin-top: auto;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
