@@ -172,7 +172,7 @@ body {
 
 .gradiant-title {
   background: linear-gradient(135deg, #ff0066, #e296b4);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
