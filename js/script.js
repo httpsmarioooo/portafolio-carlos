@@ -22,26 +22,20 @@ function showCard(title, text, textTwo, listItems = [], cvLink = null) {
         const li = document.createElement('li');
         li.classList.add('card-list-item');
 
-        // Enlace
-        const link = document.createElement('a');
-        link.href = item.url;
-        link.textContent = item.text;
-        link.target = '_blank'; // Abrir en una nueva pestaña
-        link.classList.add('card-link'); // Clase opcional para estilos
+        // Título del proyecto
+        const title = document.createElement('div');
+        title.textContent = item.text;
+        title.classList.add('project-title');
+        li.appendChild(title);
 
-        li.appendChild(link); // Agregar el enlace primero
-
-        // Etiquetas de lenguajes (si existen)
-        if (item.languages && item.languages.length > 0) {
-            const tags = document.createElement('div');
-            tags.classList.add('card-tags');
-            item.languages.forEach(language => {
-                const tag = document.createElement('span');
-                tag.classList.add('card-tag');
-                tag.textContent = language;
-                tags.appendChild(tag);
-            });
-            li.appendChild(tags); // Agregar las etiquetas después del enlace
+        // Botón para visitar el repositorio o sitio
+        if (item.url) {
+            const repoBtn = document.createElement('a');
+            repoBtn.href = item.url;
+            repoBtn.textContent = item.buttonText || 'Ver repositorio';
+            repoBtn.classList.add('repo-btn');
+            repoBtn.target = '_blank';
+            li.appendChild(repoBtn);
         }
 
         listContainer.appendChild(li);

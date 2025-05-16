@@ -170,6 +170,29 @@ body {
   transition: opacity 0.3s ease;
 }
 
+.project-title {
+    padding-bottom: 10px;
+}
+
+.repo-btn{
+  background-color: #ff0066;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.repo-btn:hover{
+  cursor: pointer;
+  text-shadow: 0 0 1px #ffffff, 0 0 5px #ffffff, 0 0 10px #ffffff,
+    0 0 15px #ffffff, 0 0 20px #ffffff;
+}
+
+a.repo-btn {
+    text-decoration: none;
+}
+
 .gradiant-title {
   background: linear-gradient(135deg, #ff0066, #e296b4);
   background-clip: text;
